@@ -1,0 +1,42 @@
+{
+    "version": 1,
+    "disable_existing_loggers": "False",
+    "formatters": {
+        "simple": {
+            "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        },
+        "flaskSimple": {
+            "format": "%(asctime)s.%(msecs)06d - %(levelname)s: %(module)s: %(message)s",
+            "datefmt" : "%H:%M:%S"
+        }
+    },
+    "handlers": {
+        "consoleHandler": {
+            "class":     "logging.StreamHandler",
+            "formatter": "flaskSimple",
+            "stream":     "ext://sys.stdout"
+        }
+    },
+    "loggers": {
+        "root": {
+            "level": "INFO",
+            "handlers":  ["consoleHandler"],
+            "propagate": "False"
+        },
+        "__main__": {
+            "level": "INFO",
+            "handlers":  ["consoleHandler"],
+            "propagate": "False"
+        },
+        "test.DistributedBlockChainTest": {
+            "level": "INFO",
+            "handlers":  ["consoleHandler"],
+            "propagate": "False"
+        },
+        "org.hasii.flaskbc": {
+            "level":     "INFO",
+            "handlers":  ["consoleHandler"],
+            "propagate": "False"
+        }
+    }
+}
