@@ -2,17 +2,17 @@
 from logging import getLogger
 from logging import Logger
 
-from test.BaseTest import BaseTest
-
 import requests
 
+from tests.TestBase import TestBase
 
-class DistributedBlockChainTest(BaseTest):
+
+class DistributedBlockChainTest(TestBase):
 
     @classmethod
     def setUpClass(cls):
         """"""
-        BaseTest.setUpLogging()
+        TestBase.setUpLogging()
 
     def setUp(self):
         """"""

@@ -1,23 +1,22 @@
 
-from unittest import main
+from unittest import main as unitTestMain
 
 from logging import getLogger
 from logging import Logger
 
 from hashlib import sha256
 
-from test.BaseTest import BaseTest
-
 from org.hasii.flaskbc.BlockChain import BlockChain
 from org.hasii.flaskbc.Block import Block
+from tests.TestBase import TestBase
 
 
-class BlockChainTest(BaseTest):
+class BlockChainTest(TestBase):
 
     @classmethod
     def setUpClass(cls):
         """"""
-        BaseTest.setUpLogging()
+        TestBase.setUpLogging()
 
     def setUp(self):
         """"""
@@ -72,4 +71,4 @@ class BlockChainTest(BaseTest):
 
 
 if __name__ == '__main__':
-    main()
+    unitTestMain()
