@@ -23,7 +23,7 @@
             "handlers": ["consoleHandler"],
             "propagate": "False"
         },
-        "tests": {
+        "__main__": {
             "level": "INFO",
             "propagate": "False"
         },

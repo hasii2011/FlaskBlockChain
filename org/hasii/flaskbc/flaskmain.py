@@ -101,6 +101,7 @@ def main():
                 'chain':   blockchain.get_serialized_chain
             }
         else:  # If our chain isn't longest, then we store the longest chain
+            # noinspection PyTypeChecker
             blockchain.chain = [blockchain.get_block_object_from_block_data(block) for block in longest_chain]
             response = {
                 'message': 'Chain was replaced',
@@ -112,8 +113,8 @@ def main():
     def get_neighbour_chains():
         neighbour_chains = []
 
-        for node_addr in blockchain.nodes:
-            resp = requests.get(node_addr + url_for('get_full_chain')).json()
+        for nodeAddress in blockchain.nodes:
+            resp = requests.get(nodeAddress + url_for('get_full_chain')).json()
             chain = resp['chain']
             neighbour_chains.append(chain)
 

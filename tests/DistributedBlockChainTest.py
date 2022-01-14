@@ -37,9 +37,9 @@ class DistributedBlockChainTest(TestBase):
 
         self._get_server_chain(server1)  # server1's chain after syncing
 
-    def _register_node(self, node_addr, parent_server):
-        requests.post(parent_server + '/register-node', json={'address': node_addr})
-        self.logger.info(f"On Server {parent_server}: Node-{node_addr} has been registered successfully!")
+    def _register_node(self, node_address, parent_server):
+        requests.post(parent_server + '/register-node', json={'address': node_address})
+        self.logger.info(f"On Server {parent_server}: Node-{node_address} has been registered successfully!")
 
     def _create_transaction(self, server: str, data):
         requests.post(server + '/create-transaction', json=data).json()
